@@ -27,7 +27,6 @@ class FileManager:
         return self.duplicates_filename_path_list
 
     def calculate_total_memory(self):
-        dict = self.file_finder.g
         return
 
     def remove_duplicates(self):
