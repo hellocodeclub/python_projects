@@ -1,13 +1,13 @@
 import unittest
 import os
-from cleanduplicates.solution.clean_duplicates import find_duplicates,list_duplicated_file
+from cleanduplicates.solution.file_manager import FileManager
 
 
 class CleanDuplicateTest(unittest.TestCase):
     def test1(self):
         create_duplicates_folder()
-        dict = find_duplicates('.')
-        list = list_duplicated_file(dict)
+        file_manager = FileManager('.')
+        list = file_manager.find_duplicated_files()
         self.assertEqual(2,len(list))
         list.sort()
         self.assertTrue('duplicate_test/subfolder/file1' in list[0])
