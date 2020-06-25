@@ -1,0 +1,11 @@
+
+Install dependencies
+
+    pip install numpy
+
+    pip install opencv-python
+
+
+Download the cascade files
+
+    https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
