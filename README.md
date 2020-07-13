@@ -1,4 +1,4 @@
-# python_projects
+# Python Projects for beginners
 
 This project contains several python projects for beginners.
 
