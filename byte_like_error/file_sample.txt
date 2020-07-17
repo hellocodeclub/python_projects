@@ -1,0 +1,5 @@
+product;stock;price
+bike;10;50
+laptop;3;1000
+microphone;5;40
+book;3;9
