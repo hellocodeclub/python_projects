@@ -5,11 +5,10 @@ import random
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
-def login_with_username_and_password(browser, username, password):
+def login_with_username_and_password(browser, email, password):
     # FILL UP THE LOGIN FORM
     email_input = browser.find_element_by_css_selector('input[type=email]')
 
-    email = username
     for letter in email:
         email_input.send_keys(letter)
         wait_time = random.randint(0,1000)/1000
@@ -21,7 +20,6 @@ def login_with_username_and_password(browser, username, password):
     time.sleep(2)
 
     password_input = browser.find_element_by_css_selector('input[type=password]')
-    password = password
     for letter in password:
         password_input.send_keys(letter)
         wait_time = random.randint(0,1000)/1000
