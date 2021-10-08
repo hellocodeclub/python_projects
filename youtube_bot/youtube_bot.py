@@ -5,10 +5,11 @@ import random
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
-def login_with_username_and_password(browser, email, password):
+def login_with_username_and_password(browser, username, password):
     # FILL UP THE LOGIN FORM
     email_input = browser.find_element_by_css_selector('input[type=email]')
 
+    email = username
     for letter in email:
         email_input.send_keys(letter)
         wait_time = random.randint(0,1000)/1000
@@ -20,6 +21,7 @@ def login_with_username_and_password(browser, email, password):
     time.sleep(2)
 
     password_input = browser.find_element_by_css_selector('input[type=password]')
+    password = password
     for letter in password:
         password_input.send_keys(letter)
         wait_time = random.randint(0,1000)/1000
@@ -35,17 +37,17 @@ def login_with_username_and_password(browser, email, password):
         confirm_button[1].click()
 
 def click_on_agree_and_signin(browser):
-    agree_button= browser.find_element_by_css_selector('button')
-    time.sleep(2)
-    agree_button.click()
+    # agree_button= browser.find_element_by_css_selector('button')
+    # time.sleep(2)
+    # agree_button.click()
 
-    signin_buttons= browser.find_elements_by_css_selector('yt-button-renderer')
+    signin_buttons= browser.find_elements_by_css_selector(".signin")
     time.sleep(6) # Wait longer so the message pops up
     while(len(signin_buttons)== 0):
-        signin_buttons= browser.find_elements_by_css_selector('yt-button-renderer')
+        signin_buttons= browser.find_elements_by_css_selector(".signin")
         time.sleep(1)
 
-    signin_buttons[1].click()
+    signin_buttons[0].click()
 
 def enter_search_term(browser,search_term):
     # Enter text on the search term
@@ -81,16 +83,19 @@ def enter_comment(browser, comment):
 #             BOT STARTS HERE             #
 ###########################################
 
-browser = webdriver.Chrome('./chromedriver')
+
+from selenium import webdriver
+firefoxProfile = webdriver.FirefoxProfile('/Users/martarey/Library/Caches/Mozilla/updates/Applications/Firefox/')
+browser = webdriver.Firefox(firefoxProfile)
 browser.get("https://www.youtube.com")
 
-all_search_terms =['make money online','online marketing','motivation']
+all_search_terms =['online marketing']#'motivation'
 
 # Click Agree and Sing In
-click_on_agree_and_signin(browser)
+#click_on_agree_and_signin(browser)
 
 # Sign In
-login_with_username_and_password(browser, "your-gmail-email-here", "your-password-here")
+#login_with_username_and_password(browser, "hey289895@gmail.com", "-1qa2ws3ed4rf-")
 
 for search_term in all_search_terms:
     enter_search_term(browser, search_term)
@@ -102,7 +107,7 @@ for search_term in all_search_terms:
         thumbnails[index].click()
         time.sleep(6)
 
-        enter_comment(browser,"your comment here")
+        enter_comment(browser,"love it :)")
         browser.execute_script("window.history.go(-1)")
         thumbnails = browser.find_elements_by_css_selector("ytd-video-renderer")
 

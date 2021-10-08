@@ -2,3 +2,5 @@
 *.pyc
 venv
 *.jpeg
+scraping/
+scraping_tech_blogs/

@@ -1,0 +1,11 @@
+pip install google-cloud-speech
+
+
+- go to the google developer console
+- create an application
+- create a key
+
+- export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
+
+references: https://cloud.google.com/speech-to-text/docs/libraries#client-libraries-install-python
+
