@@ -39,7 +39,7 @@ class DrawDemo:
 
             pygame.display.flip()
             pygame.time.delay(1000)
-            for event in pygame.event.get(QUIT):
+            if event in pygame.event.get(QUIT):
                 pygame.quit()
                 sys.exit()
 
