@@ -95,7 +95,7 @@ all_search_terms =['online marketing']#'motivation'
 #click_on_agree_and_signin(browser)
 
 # Sign In
-#login_with_username_and_password(browser, "hey289895@gmail.com", "-1qa2ws3ed4rf-")
+#login_with_username_and_password(browser, "email", "password")
 
 for search_term in all_search_terms:
     enter_search_term(browser, search_term)
